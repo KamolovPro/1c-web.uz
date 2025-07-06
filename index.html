@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1C-Web.Uz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="logo">1C-Web.Uz</div>
+  <nav class="nav" id="nav">
+    <a href="index.html" data-key="nav_home">Главная</a>
+    <a href="solutions.html" data-key="nav_solutions">Решения</a>
+    <a href="pricing.html" data-key="nav_pricing">Тарифы</a>
+    <a href="about.html" data-key="nav_about">О компании</a>
+    <a href="faq.html" data-key="nav_faq">FAQ</a>
+    <a href="contact.html" data-key="nav_contact">Контакты</a>
+  </nav>
+  <button id="lang-switch">UZ</button>
+  <button class="hamburger" id="hamburger">☰</button>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" data-key="nav_home">Главная</a>
+  <a href="solutions.html" data-key="nav_solutions">Решения</a>
+  <a href="pricing.html" data-key="nav_pricing">Тарифы</a>
+  <a href="about.html" data-key="nav_about">О компании</a>
+  <a href="faq.html" data-key="nav_faq">FAQ</a>
+  <a href="contact.html" data-key="nav_contact">Контакты</a>
+</div>
+<main>
+  <section class="hero">
+    <h1 data-key="hero_title">Облачная 1С для вашего бизнеса</h1>
+    <p data-key="hero_subtitle">Экономьте на инфраструктуре и работайте из любой точки мира.</p>
+    <button class="cta" data-open-modal data-key="hero_cta">Обсудить проект</button>
+  </section>
+  <section class="benefits">
+    <h2 data-key="benefits_title">Почему выбирают нас</h2>
+    <div class="benefit" data-key="benefit_perf">Высокая производительность</div>
+    <div class="benefit" data-key="benefit_protect">Надежная защита данных</div>
+    <div class="benefit" data-key="benefit_save">Сокращение затрат</div>
+  </section>
+  <section class="clients">
+    <h2 data-key="clients_title">Наши клиенты</h2>
+    <div class="slider" id="client-slider">
+      <!-- логотипы клиентов -->
+      <div class="slide">Client 1</div>
+      <div class="slide">Client 2</div>
+      <div class="slide">Client 3</div>
+    </div>
+  </section>
+  <section class="reviews">
+    <h2 data-key="reviews_title">Отзывы</h2>
+    <div class="slider" id="review-slider">
+      <div class="slide">"Отличный сервис"</div>
+      <div class="slide">"Сэкономили бюджет"</div>
+    </div>
+  </section>
+  <section class="cta-final">
+    <h2 data-key="cta_title">Готовы начать?</h2>
+    <button class="cta" data-open-modal data-key="cta_button">Оставить заявку</button>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2024 1C-Web.Uz</p>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button class="close" id="modal-close">&times;</button>
+    <form id="request-form">
+      <label data-key="form_name">Имя</label>
+      <input type="text" name="name" required>
+      <label data-key="form_phone">Телефон</label>
+      <input type="tel" name="phone" required>
+      <button type="submit" data-key="form_submit">Отправить</button>
+    </form>
+    <div id="form-thanks" class="hidden" data-key="form_thanks">Спасибо! Ваша заявка принята.</div>
+  </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
