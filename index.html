@@ -1,91 +1,700 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1C-Web.Uz</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>1C-Web.Uz — Облачная 1С для современного бизнеса в Узбекистане</title>
+    <meta name="description" content="Переведите вашу 1С в облако и работайте без ограничений. Быстрый доступ, максимальная безопасность и экономия на IT-инфраструктуре.">
+    <meta name="keywords" content="1с в облаке, аренда 1с, облачная 1с, 1с онлайн, 1с ташкент, 1с узбекистан, облачный сервер 1с, e-faktura">
+    <meta name="author" content="1C-Web.Uz">
+    
+    <meta property="og:title" content="1C-Web.Uz — Облачная 1С для современного бизнеса">
+    <meta property="og:description" content="Перенесем вашу 1С в защищенное облако за 1 день. Работайте в 3 раза быстрее из любой точки мира.">
+    <meta property="og:image" content="https://1solution.uz/upload/medialibrary/556/aha7xbqjq68zuuz88f1ibhbbrlgzarzt/Picsart_25_03_28_11_36_30_957.png">
+    <meta property="og:url" content="https://1c-web.uz/">
+    <meta property="og:site_name" content="1C-Web.Uz">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="1C-Web.Uz — Облачная 1С для современного бизнеса">
+    <meta name="twitter:description" content="Перенесем вашу 1С в защищенное облако за 1 день. Работайте в 3 раза быстрее из любой точки мира.">
+    <meta name="twitter:image" content="https://1solution.uz/upload/medialibrary/556/aha7xbqjq68zuuz88f1ibhbbrlgzarzt/Picsart_25_03_28_11_36_30_957.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rubik:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <style>
+        :root {
+            --yellow-1c: #ffc107;
+            --dark-blue: #0a2540;
+            --light-blue: #f6f9fc;
+            --text-primary: #1e266d;
+            --text-secondary: #525f7f;
+            --background: #ffffff;
+            --border-color: #e6ebf1;
+            --red-1c: #d92d20;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif; margin: 0; background-color: var(--background);
+            color: var(--text-primary); -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section { padding: 100px 0; }
+        
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header .tag {
+            display: inline-block; background-color: rgba(255, 193, 7, 0.1); color: #b38600;
+            padding: 6px 16px; border-radius: 16px; font-weight: 600; margin-bottom: 16px;
+        }
+        .section-header h2 { font-size: 40px; font-weight: 800; margin: 0 0 16px 0; }
+        .section-header p { font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 14px 32px; font-size: 16px; font-weight: 600;
+            text-decoration: none; border-radius: 8px;
+            transition: all 0.3s ease; cursor: pointer; border: none;
+        }
+        .btn-primary { background-color: var(--yellow-1c); color: var(--dark-blue); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 14px rgba(50, 50, 93, 0.15), 0 3px 6px rgba(0, 0, 0, 0.08); }
+        .btn:active { transform: translateY(-1px); }
+
+        .header {
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px 0; border-bottom: 1px solid var(--border-color);
+            position: sticky; top: 0; z-index: 1000; transition: box-shadow 0.3s ease;
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover { transform: scale(1.05); }
+        .logo-brand {
+            font-family: 'Rubik', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            background-color: var(--red-1c);
+            color: var(--yellow-1c);
+            padding: 4px 10px;
+            border-radius: 6px;
+            line-height: 1;
+        }
+        .logo-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .logo-name .logo-domain { color: var(--yellow-1c); }
+
+        .footer .logo-name { color: #fff; }
+        .footer .logo-name .logo-domain { color: var(--yellow-1c); }
+
+        .header nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; position: relative; padding: 5px 0; }
+        .header nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0;
+            height: 2px; background-color: var(--yellow-1c); transition: width 0.3s ease;
+        }
+        .header nav a:hover::after { width: 100%; }
+        
+        .hero { 
+            text-align: center; padding: 80px 0; position: relative; overflow: hidden;
+            background-color: #f6f9fc;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.5) 0%, rgba(246, 249, 252, 0) 40%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e6ebf1' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.15; margin: 0 auto 24px auto; max-width: 850px; }
+        .hero .subtitle { font-size: 20px; color: var(--text-secondary); max-width: 750px; margin: 0 auto 40px auto; }
+        .hero .btn-primary { animation: pulse 2s infinite 1.5s; }
+        .hero-trust-bar { display: flex; justify-content: center; gap: 30px; margin-top: 40px; color: var(--text-secondary); }
+        .trust-item { display: flex; align-items: center; gap: 8px; }
+        .trust-item i { color: #28a745; }
+        .hero-image-mockup { margin-top: 60px; }
+        .hero-image-mockup img { max-width: 100%; }
+
+        .swiper-nav { position: absolute; top: 50%; width: 100%; transform: translateY(-50%); z-index: 10; }
+        .swiper-button-prev, .swiper-button-next {
+            color: var(--dark-blue); background-color: white; border-radius: 50%;
+            width: 44px; height: 44px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .swiper-button-prev:hover, .swiper-button-next:hover { transform: scale(1.1); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .swiper-button-prev::after, .swiper-button-next::after { font-size: 18px; font-weight: bold; }
+        .feature-card {
+            background: var(--background); padding: 30px; border-radius: 12px;
+            border: 1px solid var(--border-color); text-align: center; height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+        .feature-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 64px; height: 64px; background-color: var(--yellow-1c);
+            color: var(--dark-blue); border-radius: 50%; margin-bottom: 24px; font-size: 32px;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover .feature-icon { transform: rotate(-15deg) scale(1.1); }
+        .feature-card h3 { font-size: 20px; margin: 0 0 10px 0; }
+        .clients-section { background: var(--light-blue); }
+        .client-logo { display: flex; justify-content: center; align-items: center; }
+        .client-logo img {
+            max-height: 40px; width: auto; filter: grayscale(100%); opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .client-logo img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+        .how-it-works-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;
+            position: relative;
+        }
+        .step { position: relative; }
+        .step:not(:last-child)::after {
+            content: ''; position: absolute; top: 40px; right: -15px;
+            width: calc(100% - 80px); height: 2px;
+            background-image: linear-gradient(to right, var(--border-color) 50%, transparent 50%);
+            background-size: 10px 2px; background-repeat: repeat-x;
+            transform: translate(50%, -50%);
+        }
+        .step .step-icon {
+            width: 80px; height: 80px; background: var(--light-blue); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;
+            border: 2px solid var(--border-color); font-size: 36px; color: var(--yellow-1c);
+            font-weight: 700; transition: all 0.3s ease;
+        }
+        .step:hover .step-icon {
+            transform: scale(1.1); border-color: var(--yellow-1c);
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+        }
+        .step h3 { font-size: 20px; }
+        .step p { color: var(--text-secondary); }
+        .testimonials-section {
+            background-color: var(--dark-blue);
+            background-image: linear-gradient(135deg, var(--dark-blue) 0%, #173d69 100%);
+            overflow: hidden;
+        }
+        .testimonial-card {
+            background: var(--background); padding: 40px; border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .testimonial-quote { font-size: 18px; line-height: 1.6; margin: 0 0 30px 0; font-style: italic; position: relative; padding-left: 40px; }
+        .testimonial-quote::before {
+            content: '“'; font-family: Georgia, serif; font-size: 60px; color: var(--yellow-1c);
+            position: absolute; left: 0; top: -10px; opacity: 0.8;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: 16px; }
+        .author-avatar img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--yellow-1c); }
+        .author-info h4 { margin: 0 0 4px 0; font-size: 16px; }
+        .author-info p { margin: 0; color: var(--text-secondary); }
+        #prices { background: linear-gradient(180deg, var(--light-blue) 0%, var(--background) 100%);}        
+        .price-card {
+            border: 1px solid var(--border-color); border-radius: 12px; padding: 30px; background: #fff; text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+        .price-card.popular {
+            border: 2px solid var(--yellow-1c); transform: scale(1.05);
+            animation: glowing-border 3s ease-in-out infinite;
+        }
+        .price-card.popular:hover { transform: scale(1.08) translateY(-10px); }
+        .price-card .tag { background-color: var(--yellow-1c); color: var(--dark-blue); }
+        .price-card h3 { font-size: 22px; margin-top: 15px; }
+        .price-card p { color: var(--text-secondary); min-height: 40px; }
+        .price-card .price { font-size: 48px; font-weight: 700; margin: 20px 0; }
+        .price-card .price span { font-size: 18px; font-weight: 500; }
+        .price-card ul { list-style: none; padding: 0; text-align: left; margin: 30px 0; color: var(--text-secondary); }
+        .price-card li { margin-bottom: 15px; display:flex; align-items:center; gap: 10px; }
+        .price-card li i { color: #28a745; transition: transform 0.3s ease; }
+        .price-card:hover li i { transform: scale(1.2); }
+        .faq-list details { border-bottom: 1px solid var(--border-color); padding: 20px 0; cursor: pointer; }
+        .faq-list details summary {
+            font-weight: 600; font-size: 18px; display: flex; justify-content: space-between;
+            align-items: center; list-style: none;
+            transition: color 0.3s ease;
+        }
+        .faq-list details summary::-webkit-details-marker { display: none; }
+        .faq-list details summary:hover { color: var(--yellow-1c); }
+        .faq-list details summary i { transition: transform 0.3s ease; }
+        .faq-list details[open] > summary i { transform: rotate(180deg); }
+        .faq-list details p {
+            color: var(--text-secondary); line-height: 1.6;
+            margin: 0; padding-top: 15px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding-top 0.5s ease-out;
+            max-height: 0;
+        }
+        .faq-list details[open] > p { max-height: 200px; }
+        .footer {
+            background-color: var(--dark-blue);
+            color: #adb5bd;
+            padding: 80px 0 30px 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .footer-col p, .footer-col a {
+            color: #adb5bd;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--yellow-1c); }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-socials { display: flex; gap: 15px; margin-top: 20px; }
+        .footer-socials a {
+            display: flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px;
+            border: 1px solid #495057;
+            border-radius: 50%;
+        }
+        .footer-socials a:hover {
+            background-color: var(--yellow-1c);
+            border-color: var(--yellow-1c);
+            color: var(--dark-blue);
+        }
+        .footer-bottom {
+            border-top: 1px solid #495057;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .hamburger { display:none;background:none;border:0;font-size:28px;margin-left:15px; }
+        .lang-switch { background:none;border:0;font-weight:600;margin-left:15px;cursor:pointer; }
+        .mobile-menu { display:none;flex-direction:column;position:fixed;top:0;left:0;width:100%;height:100%;background:var(--dark-blue);padding-top:80px;align-items:center;z-index:1100; }
+        .mobile-menu a { color:#fff;text-decoration:none;font-size:20px;margin:10px 0; }
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 44px; }
+            .how-it-works-grid { grid-template-columns: 1fr 1fr; gap: 60px 30px; }
+            .step { margin-bottom: 0; }
+            .step:nth-child(2)::after { display: none; }
+            .step:not(:last-child)::after { right: -15px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .section { padding: 60px 0; }
+            .hero h1 { font-size: 36px; }
+            .hero-trust-bar { flex-direction: column; gap: 15px; align-items: center; }
+            .section-header h2 { font-size: 32px; }
+            .how-it-works-grid { grid-template-columns: 1fr; gap: 40px; }
+            .step:not(:last-child)::after {
+                content: '↓'; font-size: 30px; color: var(--yellow-1c);
+                background-image: none;
+                width: auto; height: auto;
+                left: 50%; bottom: -40px; right: auto; top: auto;
+                transform: translateX(-50%);
+            }
+            .price-card.popular { transform: scale(1); }
+            .pricing-grid > .price-card { margin-bottom: 30px; }
+            .pricing-grid { gap: 0; }
+            .hamburger { display:block; }
+            .header nav { display:none; }
+        }
+    </style>
 </head>
 <body>
-<header class="header">
-  <div class="logo">1C-Web.Uz</div>
-  <nav class="nav" id="nav">
-    <a href="index.html" data-key="nav_home">Главная</a>
-    <a href="solutions.html" data-key="nav_solutions">Решения</a>
-    <a href="pricing.html" data-key="nav_pricing">Тарифы</a>
-    <a href="about.html" data-key="nav_about">О компании</a>
-    <a href="faq.html" data-key="nav_faq">FAQ</a>
-    <a href="contact.html" data-key="nav_contact">Контакты</a>
-  </nav>
-  <button id="lang-switch">UZ</button>
-  <button class="hamburger" id="hamburger">☰</button>
-</header>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html" data-key="nav_home">Главная</a>
-  <a href="solutions.html" data-key="nav_solutions">Решения</a>
-  <a href="pricing.html" data-key="nav_pricing">Тарифы</a>
-  <a href="about.html" data-key="nav_about">О компании</a>
-  <a href="faq.html" data-key="nav_faq">FAQ</a>
-  <a href="contact.html" data-key="nav_contact">Контакты</a>
-</div>
-<main>
-  <section class="hero">
-    <h1 data-key="hero_title">Облачная 1С для вашего бизнеса</h1>
-    <p data-key="hero_subtitle">Экономьте на инфраструктуре и работайте из любой точки мира.</p>
-    <button class="cta" data-open-modal data-key="hero_cta">Обсудить проект</button>
-  </section>
-  <section class="benefits">
-    <h2 data-key="benefits_title">Почему выбирают нас</h2>
-    <div class="benefit"><i class="fas fa-gauge-high"></i><div data-key="benefit_perf">Высокая производительность</div></div>
-    <div class="benefit"><i class="fas fa-shield-alt"></i><div data-key="benefit_protect">Надежная защита данных</div></div>
-    <div class="benefit"><i class="fas fa-money-bill-wave"></i><div data-key="benefit_save">Сокращение затрат</div></div>
-  </section>
-  <section class="clients">
-    <h2 data-key="clients_title">Наши клиенты</h2>
-    <div class="swiper slider" id="client-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Client 1</div>
-        <div class="swiper-slide">Client 2</div>
-        <div class="swiper-slide">Client 3</div>
-      </div>
-    </div>
-  </section>
-  <section class="reviews">
-    <h2 data-key="reviews_title">Отзывы</h2>
-    <div class="swiper slider" id="review-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">"Отличный сервис"</div>
-        <div class="swiper-slide">"Сэкономили бюджет"</div>
-      </div>
-    </div>
-  </section>
-  <section class="cta-final">
-    <h2 data-key="cta_title">Готовы начать?</h2>
-    <button class="cta" data-open-modal data-key="cta_button">Оставить заявку</button>
-  </section>
-</main>
-<footer>
-  <p>&copy; 2024 1C-Web.Uz</p>
-</footer>
 
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <button class="close" id="modal-close">&times;</button>
-    <form id="request-form">
-      <label data-key="form_name">Имя</label>
-      <input type="text" name="name" required>
-      <label data-key="form_phone">Телефон</label>
-      <input type="tel" name="phone" required>
-      <button type="submit" data-key="form_submit">Отправить</button>
-    </form>
-    <div id="form-thanks" class="hidden" data-key="form_thanks">Спасибо! Ваша заявка принята.</div>
-  </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/main.js"></script>
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <span class="logo-brand">1С</span>
+                <span class="logo-name">-Web<span class="logo-domain">.Uz</span></span>
+            </a>
+            <nav style="display: flex; gap: 25px; align-items: center;">
+                <a href="#features" data-key="nav_features">Преимущества</a>
+                <a href="#prices" data-key="nav_pricing">Тарифы</a>
+                <a href="#faq" data-key="nav_faq">FAQ</a>
+            </nav>
+            <button id="lang-switch" class="lang-switch">UZ</button>
+            <button class="hamburger" id="hamburger">☰</button>
+            <a href="#" class="btn btn-primary" data-open-modal>
+                <i data-lucide="phone"></i> 
+                <span data-key="hero_cta">Обсудить проект</span>
+            </a>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#features" data-key="nav_features">Преимущества</a>
+        <a href="#prices" data-key="nav_pricing">Тарифы</a>
+        <a href="#faq" data-key="nav_faq">FAQ</a>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 data-key="hero_title">Забудьте о сервере для 1С. Навсегда.</h1>
+                <p class="subtitle" data-key="hero_subtitle">Перенесем вашу 1С в наше защищенное облако за 1 день. Работайте в 3 раза быстрее из любой точки мира, экономя до 40% на IT-расходах. Сосредоточьтесь на бизнесе, а не на железе.</p>
+                
+                <div class="hero-cta-buttons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 40px;">
+                    <a href="#prices" class="btn btn-primary" data-open-modal>
+                        <i data-lucide="arrow-down-to-line"></i>
+                        <span>Подобрать тариф</span>
+                    </a>
+                    <a href="#" class="btn" style="background-color: transparent; border: 1px solid var(--border-color); color: var(--text-secondary);" data-open-modal>
+                        <i data-lucide="rocket"></i>
+                        <span>Попробовать 7 дней бесплатно</span>
+                    </a>
+                </div>
+
+                <div class="hero-trust-bar">
+                    <div class="trust-item"><i data-lucide="check-circle"></i> Гарантия аптайма 99.9%</div>
+                    <div class="trust-item"><i data-lucide="check-circle"></i> Поддержка 1С-экспертов 24/7</div>
+                    <div class="trust-item"><i data-lucide="check-circle"></i> Совместимость с E-faktura</div>
+                </div>
+                <div class="hero-image-mockup">
+                    <img src="https://1solution.uz/upload/medialibrary/556/aha7xbqjq68zuuz88f1ibhbbrlgzarzt/Picsart_25_03_28_11_36_30_957.png" height="200" alt="Интерфейс 1С на ноутбуке и планшете">
+                </div>
+            </div>
+        </section>
+        
+        <section class="section clients-section">
+            <div class="container">
+                <div class="animated fade-in-up" style="text-align: center; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    Нам доверяют ведущие компании Узбекистана
+                </div>
+                <div class="swiper clients-swiper animated fade-in-up" style="margin-top: 30px;">
+                    <div class="swiper-wrapper" style="align-items: center;">
+                        <div class="swiper-slide client-logo"><img src="https://logobank.uz:8005/media/logos_png/Artel-01.png" alt="Логотип клиента 1"></div>
+                        <div class="swiper-slide client-logo"><img src="https://logobank.uz:8005/media/logos_png/texnomart-01.png" alt="Логотип клиента 2"></div>
+                        <div class="swiper-slide client-logo"><img src="https://logobank.uz:8005/media/logos_png/korzinka-01.png" alt="Логотип клиента 3"></div>
+                        <div class="swiper-slide client-logo"><img src="https://logobank.uz:8005/media/logos_png/Uztelecom-01.png" alt="Логотип клиента 4"></div>
+                        <div class="swiper-slide client-logo"><img src="https://logobank.uz:8005/media/logos_png/Coca-Cola-01.png" alt="Логотип клиента 5"></div>
+                        <div class="swiper-slide client-logo"><img src="https://logobank.uz:8005/media/logos_png/Akfa-01.png" alt="Логотип клиента 6"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header animated fade-in-up">
+                    <span class="tag">Ваши преимущества</span>
+                    <h2>Почему выбирают облако 1C-Web.Uz</h2>
+                </div>
+                <div class="swiper features-swiper animated fade-in-up">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon"><i data-lucide="gauge-circle"></i></div>
+                                <h3>Молниеносная работа на NVMe</h3>
+                                <p>Ваши отчеты формируются в разы быстрее благодаря промышленным NVMe SSD-дискам. Гарантируем, что вы забудете о "зависаниях" 1С.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                             <div class="feature-card">
+                                <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                                <h3>Банковский уровень защиты</h3>
+                                <p>256-битное шифрование и ежедневные резервные копии в удаленном дата-центре. Ваши данные надежнее, чем в сейфе вашего офиса.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon"><i data-lucide="piggy-bank"></i></div>
+                                <h3>Экономия до 40%</h3>
+                                <p>Забудьте о расходах на покупку сервера (от 15 млн сум), его обслуживание и оплату IT-специалиста. Платите понятную ежемесячную сумму.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon"><i data-lucide="headphones"></i></div>
+                                <h3>Экспертная поддержка 1С 24/7</h3>
+                                <p>Наша команда — это сертифицированные специалисты по 1С, которые говорят с вами на одном языке и решают проблему, а не просто перезагружают сервер.</p>
+                            </div>
+                        </div>
+                         <div class="swiper-slide">
+                            <div class="feature-card">
+                                <div class="feature-icon"><i data-lucide="globe"></i></div>
+                                <h3>Доступ из любой точки мира</h3>
+                                <p>Подключайтесь к 1С с Windows, macOS или планшета. Контролируйте бизнес из командировки, дома или кафе. Все, что вам нужно — это интернет.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination" style="position: relative; margin-top: 40px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prices" class="section">
+            <div class="container">
+                <div class="section-header animated fade-in-up">
+                    <span class="tag">Тарифы</span>
+                    <h2>Выберите свой план</h2>
+                    <p>Прозрачные цены без скрытых платежей. Выберите тариф, который подходит именно вашему бизнесу. Нужна помощь? Мы подберем для вас лучшее решение.</p>
+                </div>
+                <div class="pricing-grid animated fade-in-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: start;">
+                    
+                    <div class="price-card">
+                        <h3 style="font-size: 22px;">Старт</h3>
+                        <p>Для небольших команд и стартапов</p>
+                        <div class="price">299<span style="font-size: 18px; font-weight: 500;"> тыс. сум/мес</span></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> <b>До 2 пользователей</b></li>
+                            <li><i data-lucide="check"></i> 1 база 1С</li>
+                            <li><i data-lucide="check"></i> 20 ГБ на NVMe диске</li>
+                            <li><i data-lucide="check"></i> Ежедневные бэкапы</li>
+                        </ul>
+                        <button class="btn" style="background: var(--dark-blue); color: #fff; width: 100%;" data-open-modal>Выбрать</button>
+                    </div>
+        
+                    <div class="price-card popular">
+                        <span class="tag">Популярный</span>
+                        <h3 style="margin-top: 15px;">Бизнес</h3>
+                        <p>Оптимальное решение для растущих компаний</p>
+                        <div class="price">599<span style="font-size: 18px; font-weight: 500;"> тыс. сум/мес</span></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> <b>До 5 пользователей</b></li>
+                            <li><i data-lucide="check"></i> До 5 баз 1С</li>
+                            <li><i data-lucide="check"></i> 50 ГБ на NVMe диске</li>
+                            <li><i data-lucide="check"></i> Приоритетная поддержка</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;" data-open-modal>Выбрать</button>
+                    </div>
+        
+                    <div class="price-card">
+                        <h3>Корпорация</h3>
+                        <p>Для крупных предприятий и холдингов</p>
+                        <div class="price" style="font-size: 40px; min-height: 60px; display: flex; align-items: center; justify-content: center;">Индивидуально</div>
+                        <ul>
+                            <li><i data-lucide="check"></i> <b>От 10 пользователей</b></li>
+                            <li><i data-lucide="check"></i> Любое кол-во баз</li>
+                            <li><i data-lucide="check"></i> Выделенный сервер</li>
+                            <li><i data-lucide="check"></i> Персональный менеджер</li>
+                        </ul>
+                        <button class="btn" style="background: var(--dark-blue); color: #fff; width: 100%;" data-open-modal>Обсудить проект</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header animated fade-in-up">
+                    <span class="tag">Процесс</span>
+                    <h2>Начать работать в облаке — просто</h2>
+                    <p>Мы сделали процесс перехода максимально простым и быстрым. Всего 4 шага отделяют вас от нового уровня работы.</p>
+                </div>
+                <div class="how-it-works-grid">
+                    <div class="step animated fade-in-up" style="transition-delay: 0s;">
+                        <div class="step-icon">1</div>
+                        <h3>Консультация и план</h3>
+                        <p>Вы оставляете заявку, мы анализируем вашу текущую базу, количество пользователей и подбираем идеальный тариф.</p>
+                    </div>
+                    <div class="step animated fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="step-icon">2</div>
+                        <h3>Безопасный перенос</h3>
+                        <p>Наши инженеры бережно переносят вашу базу в облако в удобное для вас время, чтобы минимизировать простой.</p>
+                    </div>
+                    <div class="step animated fade-in-up" style="transition-delay: 0.4s;">
+                        <div class="step-icon">3</div>
+                        <h3>Тестирование и запуск</h3>
+                        <p>Мы предоставляем вам доступ для полного тестирования. Вы убеждаетесь, что все работает идеально, и только потом мы запускаемся.</p>
+                    </div>
+                    <div class="step animated fade-in-up" style="transition-delay: 0.6s;">
+                        <div class="step-icon">4</div>
+                        <h3>Поддержка и рост</h3>
+                        <p>Вы получаете круглосуточную поддержку и возможность легко добавлять новых пользователей по мере роста вашего бизнеса.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials-section">
+            <div class="container">
+                 <div class="section-header animated fade-in-up">
+                    <span class="tag" style="background-color: rgba(255,255,255,0.1); color: #fff;">Мнения</span>
+                    <h2 style="color:#fff;">Что говорят наши клиенты</h2>
+                </div>
+                <div class="swiper testimonials-swiper animated fade-in-up">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">"Переход в облако с 1C-Web.Uz стал лучшим решением для нашей бухгалтерии. Теперь я могу закрывать квартал из дома, не теряя в скорости. Поддержка реагирует моментально!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar"><img src="https://img.icons8.com/?size=100&id=0lg0kb05hrOz&format=png&color=000000" alt="Фото клиента"></div>
+                                    <div class="author-info">
+                                        <h4>Акмаль Саидов</h4>
+                                        <p>Главный бухгалтер, ООО "Orient Logistics", г. Ташкент</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">"Мы мучались с нашим старым сервером: постоянные сбои, медленная выгрузка. Команда 1C-Web.Uz за одну ночь перенесла нашу доработанную базу УТ 3.0. Теперь всё 'летает'."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar"><img src="https://img.icons8.com/?size=100&id=0lg0kb05hrOz&format=png&color=000000" alt="Фото клиента"></div>
+                                    <div class="author-info">
+                                        <h4>Тимур Ибрагимов</h4>
+                                        <p>Директор, "BuildInvest Group", г. Самарканд</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-quote">"Как финансовый директор, я теперь могу контролировать все денежные потоки, находясь в командировках по всему Узбекистану. Это невероятно удобно. Экономия на IT тоже стала приятным бонусом."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar"><img src="https://img.icons8.com/?size=100&id=0lg0kb05hrOz&format=png&color=000000" alt="Фото клиента"></div>
+                                    <div class="author-info">
+                                        <h4>Елена Ким</h4>
+                                        <p>Финансовый директор, "Silk Road Textiles", г. Бухара</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header animated fade-in-up">
+                    <span class="tag">Вопросы</span>
+                    <h2>Отвечаем на популярные вопросы</h2>
+                </div>
+                <div class="faq-list animated fade-in-up" style="max-width: 800px; margin: 0 auto;">
+                    <details>
+                        <summary>
+                            <span>У меня доработанная конфигурация 1С. Это будет работать?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <p>Да, абсолютно. Мы переносим вашу базу "как есть", со всеми доработками, отчетами и настройками. Наше облако полностью совместимо с любыми конфигурациями 1С:Предприятие 8.</p>
+                    </details>
+                    <details>
+                        <summary>
+                            <span>Насколько это безопасно? Что, если кто-то украдет мои данные?</span>
+                             <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <p>Это намного безопаснее, чем сервер в офисе. Все данные передаются по шифрованному каналу (как в интернет-банкинге). Серверы физически охраняются в дата-центре TIER III в Ташкенте, а ежедневные резервные копии исключают потерю данных.</p>
+                    </details>
+                    <details>
+                        <summary>
+                            <span>Что входит в стоимость, кроме аренды?</span>
+                             <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <p>В стоимость тарифа уже включены: бесплатный перенос вашей базы, первоначальная настройка, ежедневное резервное копирование, все обновления платформы 1С и круглосуточная техническая поддержка.</p>
+                    </details>
+                     <details>
+                        <summary>
+                            <span>Что такое тестовый период на 7 дней?</span>
+                             <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <p>Мы бесплатно перенесем вашу базу в облако, и вы сможете полноценно работать в ней 7 дней. Это позволит вам оценить скорость и удобство без каких-либо обязательств. Если вам не понравится — мы вернем вам архив вашей базы.</p>
+                    </details>
+                    <details>
+                        <summary>
+                            <span>Как происходит обновление моей 1С в облаке?</span>
+                             <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <p>Мы берем на себя все обновления платформы 1С. Они устанавливаются автоматически в ночное время, чтобы не мешать вашей работе. Обновления вашей конфигурации (особенно если она доработана) мы проводим по согласованию с вами.</p>
+                    </details>
+                    <details>
+                        <summary>
+                            <span>Можно ли подключить торговое оборудование (сканер, принтер)?</span>
+                             <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <p>Да, можно. Мы настраиваем проброс портов для подключения большинства видов торгового оборудования, включая сканеры штрих-кодов, принтеры этикеток и фискальные регистраторы.</p>
+                    </details>
+                    <details>
+                        <summary>
+                            <span>Что, если мне понадобится больше или меньше пользователей?</span>
+                             <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <p>Вы можете гибко управлять количеством пользователей. Просто свяжитесь с вашим персональным менеджером, и мы оперативно сменим ваш тарифный план на более подходящий. Пересчет произойдет с начала следующего расчетного периода.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo">
+                        <span class="logo-brand">1С</span>
+                        <span class="logo-name">-Web<span class="logo-domain">.Uz</span></span>
+                    </a>
+                    <p style="margin-top: 20px;">Надежное облако для вашего бизнеса в Узбекистане. Сосредоточьтесь на росте, об IT позаботимся мы.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Telegram"><i data-lucide="send"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#features">Преимущества</a></li>
+                        <li><a href="#prices">Тарифы</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Блог</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+998913372747">+998 (91) 337-27-47</a></li>
+                        <li><a href="mailto:info@1c-web.uz">info@1c-web.uz</a></li>
+                        <li><p>г. Ташкент, ул. Амира Темура, 1</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 1C-Web.Uz. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <button class="close" id="modal-close">&times;</button>
+        <form id="request-form">
+          <label data-key="form_name">Имя</label>
+          <input type="text" name="name" required>
+          <label data-key="form_phone">Телефон</label>
+          <input type="tel" name="phone" required>
+          <button type="submit" data-key="form_submit">Отправить</button>
+        </form>
+        <div id="form-thanks" class="hidden" data-key="form_thanks">Спасибо! Ваша заявка принята.</div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
