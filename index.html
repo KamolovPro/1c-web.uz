@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1C-Web.Uz</title>
   <link rel="stylesheet" href="css/style.css">
@@ -37,24 +40,27 @@
   </section>
   <section class="benefits">
     <h2 data-key="benefits_title">Почему выбирают нас</h2>
-    <div class="benefit" data-key="benefit_perf">Высокая производительность</div>
-    <div class="benefit" data-key="benefit_protect">Надежная защита данных</div>
-    <div class="benefit" data-key="benefit_save">Сокращение затрат</div>
+    <div class="benefit"><i class="fas fa-gauge-high"></i><div data-key="benefit_perf">Высокая производительность</div></div>
+    <div class="benefit"><i class="fas fa-shield-alt"></i><div data-key="benefit_protect">Надежная защита данных</div></div>
+    <div class="benefit"><i class="fas fa-money-bill-wave"></i><div data-key="benefit_save">Сокращение затрат</div></div>
   </section>
   <section class="clients">
     <h2 data-key="clients_title">Наши клиенты</h2>
-    <div class="slider" id="client-slider">
-      <!-- логотипы клиентов -->
-      <div class="slide">Client 1</div>
-      <div class="slide">Client 2</div>
-      <div class="slide">Client 3</div>
+    <div class="swiper slider" id="client-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Client 1</div>
+        <div class="swiper-slide">Client 2</div>
+        <div class="swiper-slide">Client 3</div>
+      </div>
     </div>
   </section>
   <section class="reviews">
     <h2 data-key="reviews_title">Отзывы</h2>
-    <div class="slider" id="review-slider">
-      <div class="slide">"Отличный сервис"</div>
-      <div class="slide">"Сэкономили бюджет"</div>
+    <div class="swiper slider" id="review-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">"Отличный сервис"</div>
+        <div class="swiper-slide">"Сэкономили бюджет"</div>
+      </div>
     </div>
   </section>
   <section class="cta-final">
@@ -79,6 +85,7 @@
     <div id="form-thanks" class="hidden" data-key="form_thanks">Спасибо! Ваша заявка принята.</div>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

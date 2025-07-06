@@ -81,3 +81,9 @@ window.addEventListener('scroll',()=>{
     }
   });
 });
+
+// sliders
+if(window.Swiper){
+  new Swiper('#client-slider',{loop:true,autoplay:{delay:3000}});
+  new Swiper('#review-slider',{loop:true,autoplay:{delay:5000}});
+}
