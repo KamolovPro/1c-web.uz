@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Phone, Menu, X } from 'lucide-react'
+import { Phone, Menu, X, UserCircle } from 'lucide-react'
 import { useApp } from './AppContext'
 import Logo from './Logo'
 
@@ -37,6 +37,10 @@ export default function Header() {
             <button className="lang-switch" onClick={switchLang} aria-label="Сменить язык">
               {t.langName}
             </button>
+            <a href="/login" className="header-login" aria-label={t.cabinet.nav.dashboard}>
+              <UserCircle size={20} />
+              <span>{t.cabinet.brand}</span>
+            </a>
             <button className="btn btn-primary header-cta" onClick={() => openModal()}>
               <Phone size={18} />
               <span>{t.nav.contact}</span>
@@ -59,6 +63,9 @@ export default function Header() {
             {l.label}
           </a>
         ))}
+        <a href="/login" onClick={() => setMobileMenuOpen(false)}>
+          {t.cabinet.brand}
+        </a>
         <button
           className="btn btn-primary"
           onClick={() => {
